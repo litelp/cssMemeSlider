@@ -83,6 +83,41 @@ label {
     transition: 1s ease;
 }
 
+ /* pagination clicks  */
+ #num1:checked ~ .desc #btn1,
+ #num2:checked ~ .desc #btn2,
+ #num3:checked ~ .desc #btn3,
+ #num4:checked ~ .desc #btn4 {
+     background-color: rgb(112, 110, 53);
+     border: 0.3vw solid rgb(250, 221, 142);
+     box-sizing: border-box;
+ }
+
+ /* pagination hover */
+ #num1:hover ~ .desc #btn1,
+ #num2:hover ~ .desc #btn2,
+ #num3:hover ~ .desc #btn3,
+ #num4:hover ~ .desc #btn4 {
+     background-color: rgb(251, 252, 217);
+ }
+
+ /* pagination focus */
+ #num1:active ~ .desc #btn1,
+ #num2:active ~ .desc #btn2,
+ #num3:active ~ .desc #btn3,
+ #num4:active ~ .desc #btn4 {
+     background-color: rgb(112, 110, 53);
+     color: rgb(112, 110, 53);
+ }
+
+ /* pagination visited */
+ #num1:visited ~ .desc #btn1,
+ #num2:visited ~ .desc #btn2,
+ #num3:visited ~ .desc #btn3,
+ #num4:visited ~ .desc #btn4 {
+     background-color: rgb(250, 221, 142);
+ }
+
 
 
 
