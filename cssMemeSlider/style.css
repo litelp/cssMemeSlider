@@ -6,8 +6,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 40vw;
-    height: 50vw;
+    width: 70vw;
+    height: 45vw;
     margin: 1vw auto;
 }
 
@@ -15,12 +15,18 @@ body {
     display: none;
 }
 
-.slider {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+.slider-wrapper {
+    height: 94%;
     border: 0.2vw solid rgb(250, 221, 142);
-    border-radius: 10px;
+    border-radius: 2vw;
+    background-color: rgba(100, 100, 100, 0.5);
+}
+
+.slider {
+    width: 60%;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
 .slides {
@@ -38,25 +44,28 @@ body {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    height: 3vw;
+    height: 20%;
     margin-top: 1vw;
 }
 
 .text-container {
     overflow: hidden;
     width: 40%;
+    height: 6vw;
 }
 
 .text {
     display: flex;
+    align-items: center;
     width: 400%;
+    height: 100%;
 }
 
 .text p {
     width: 25%;
     transition: 1s ease-in-out;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 2vw;
+    font-size: 3vw;
     color: rgb(250, 221, 142);
 }
 
@@ -68,71 +77,73 @@ body {
 
 label {
     display: flex;
-    justify-content: flex-end;
-    width: 4vw;
-    height: 3vw;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
     cursor: pointer;
 }
 
 .btn {
-    width: 2vw;
-    height: 2vw;
+    width: 3vw;
+    height: 3vw;
     border-radius: 50%;
     background-color: rgb(250, 221, 142);
 
     transition: 1s ease;
 }
 
+
  /* pagination clicks  */
- #num1:checked ~ .desc #btn1,
- #num2:checked ~ .desc #btn2,
- #num3:checked ~ .desc #btn3,
- #num4:checked ~ .desc #btn4 {
-     background-color: rgb(112, 110, 53);
-     border: 0.3vw solid rgb(250, 221, 142);
-     box-sizing: border-box;
- }
+#num1:checked ~ .desc #btn1,
+#num2:checked ~ .desc #btn2,
+#num3:checked ~ .desc #btn3,
+#num4:checked ~ .desc #btn4 {
+    background-color: rgb(112, 110, 53);
+    border: 0.3vw solid rgb(250, 221, 142);
+    box-sizing: border-box;
+}
 
- /* pagination hover */
- #num1:hover ~ .desc #btn1,
- #num2:hover ~ .desc #btn2,
- #num3:hover ~ .desc #btn3,
- #num4:hover ~ .desc #btn4 {
-     background-color: rgb(251, 252, 217);
- }
+/* pagination hover */
+#num1:hover ~ .desc #btn1,
+#num2:hover ~ .desc #btn2,
+#num3:hover ~ .desc #btn3,
+#num4:hover ~ .desc #btn4 {
+    background-color: rgb(251, 252, 217);
+}
 
- /* pagination focus */
- #num1:active ~ .desc #btn1,
- #num2:active ~ .desc #btn2,
- #num3:active ~ .desc #btn3,
- #num4:active ~ .desc #btn4 {
-     background-color: rgb(112, 110, 53);
-     color: rgb(112, 110, 53);
- }
+/* pagination focus */
+#num1:active ~ .desc #btn1,
+#num2:active ~ .desc #btn2,
+#num3:active ~ .desc #btn3,
+#num4:active ~ .desc #btn4 {
+    background-color: rgb(112, 110, 53);
+    color: rgb(112, 110, 53);
+}
 
- /* pagination visited */
- #num1:visited ~ .desc #btn1,
- #num2:visited ~ .desc #btn2,
- #num3:visited ~ .desc #btn3,
- #num4:visited ~ .desc #btn4 {
-     background-color: rgb(250, 221, 142);
- }
+/* pagination visited */
+#num1:visited ~ .desc #btn1,
+#num2:visited ~ .desc #btn2,
+#num3:visited ~ .desc #btn3,
+#num4:visited ~ .desc #btn4 {
+    background-color: rgb(250, 221, 142);
+}
 
-/* slide effects for pictures */
-#num1:checked ~ .slider .slides .slider-item {
+/* slide effects */
+#num1:checked ~ .slider-wrapper .slider .slides .slider-item {
     transform: translateX(0%);
 }
-#num2:checked ~ .slider .slides .slider-item {
+#num2:checked ~ .slider-wrapper .slider .slides .slider-item {
     transform: translateX(-100%);
 }
-#num3:checked ~ .slider .slides .slider-item {
+#num3:checked ~ .slider-wrapper .slider .slides .slider-item {
     transform: translateX(-200%);
 }
-#num4:checked ~ .slider .slides .slider-item {
+#num4:checked ~ .slider-wrapper .slider .slides .slider-item {
     transform: translateX(-300%);
 }
 
-/* slide effects for text */
+/* text effects */
 #num1:checked ~ .desc .text-container .text .text-item {
     transform: translateX(0%);
 }
@@ -146,17 +157,14 @@ label {
     transform: translateX(-300%);
 }
 
+
 @media (max-width: 600px) {
+
     .desc {
         flex-direction: column-reverse;
-        height: 5vw;
     }
 
     .controls {
         margin: 0 auto;
     }
 }
-
-
-
-
